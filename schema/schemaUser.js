@@ -2,6 +2,12 @@ const mongoose = require('mongoose');
 const passwordHash = require('password-hash');
 const jwt = require('jwt-simple');
 const config = require('../config/config');
+mongoose.connect('mongodb://localhost:27017/db').then(() => {
+    console.log('Connected to mongoDB')
+}).catch(e => {
+    console.log('Error while DB connecting');
+    console.log(e);
+});
 
 var userSchema = mongoose.Schema({
     email: {
@@ -15,7 +21,7 @@ var userSchema = mongoose.Schema({
         type: String,
         required: true
     }
-},{ timestamps: { createdAt: 'created_at' }})
+},{ timestamps: { createdAt: 'created_at' }});
 
 
 userSchema.methods = {
@@ -25,6 +31,6 @@ userSchema.methods = {
     getToken: function () {
         return jwt.encode(this, config.secret);
     }
-}
+};
 
 module.exports = mongoose.model('User', userSchema);

@@ -1,6 +1,6 @@
 const account = require('./account/lib.js');
 
 module.exports = function (app) {
-    app.post('/login',account.login);
-    app.post('/signup',account.signup);
-}
+    app.post('user/login',account.login);
+    app.post('user/signup',account.signup);
+};
