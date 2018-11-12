@@ -1,0 +1,15 @@
+{
+  "name": "mernapp",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "body-parser": "^1.18.2",
+    "mongoose": "^5.0.7",
+    "password-hash": "^1.2.2",
+    "jwt-simple": "^0.5.1"
+  }
+}
