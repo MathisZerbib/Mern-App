@@ -141,7 +141,7 @@ router.post('/user/login',function (req, res) {
 app.use('/', router);
 
 app.get('/',function signup(req, res) {
-    res.send("OKLM RADIO");
+    res.send("Works");
 });
 
 var port = 4000;
